@@ -1,0 +1,84 @@
+
+/* ESTILO GENERAL */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 60px);
+  padding: 20px 10px;
+  overflow-y: auto;
+  font-weight: bold;
+
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sidebar a {
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* TEMA CLARO */
+.light-sidebar {
+  background-color: #85acd3;
+  color: #212529;
+}
+
+.light-sidebar a {
+  color: #212529;
+}
+.light-sidebar a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.light-sidebar a.actived {
+  background-color: #007bff;
+  color: white;
+}
+
+.light-sidebar ul {
+  background-color: #85acd3;
+}
+
+
+
+
+/* TEMA OSCURO */
+.dark-sidebar {
+  background-color: #1f2d3d;
+  color: #ffffff;
+}
+
+.dark-sidebar a {
+  color: white;
+}
+
+.dark-sidebar a:hover {
+  background-color: #292929;
+  color: white;
+}
+
+.dark-sidebar a.actived {
+  background-color: #292929;
+  color: white;
+}
+
+.dark-sidebar ul {
+  background-color: #1f2d3d;
+  color:white;
+}
+

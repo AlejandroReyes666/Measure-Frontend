@@ -1,0 +1,132 @@
+.location-details-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo gris claro */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .location-details-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #007bff; /* Azul de Bootstrap */
+  }
+  
+  .location-details-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .location-details-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+  }
+  
+  .location-details-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .back-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-inline: 20px;
+  }
+  
+ 
+
+
+  .light-custom-form #name,
+  .light-custom-form #status,
+  .light-custom-form #idLocation{
+    background-color: white;
+    color: #00060c;
+  }
+
+  .light-custom-a{
+    text-decoration: none;
+    color:#00060c;
+  }
+
+
+  .light-custom-btn {
+    background-color: #007bff;
+    color: white !important;
+  }
+  
+  .light-custom-btn-secondary {
+    background-color:#85c1e9 ;
+    color: white !important;
+  }
+
+  .light-custom-btn-danger{
+    background-color:#dc3545 ;
+    color: white !important;
+  }
+
+  .light-custom-content{
+    background-color:white;
+    color: #00060c!important;
+  
+  }
+
+  .light-custom-div,
+  .light-location-details-title{
+    background-color:white;
+    color: #00060c!important;
+  
+  }
+
+  
+
+
+  .dark-custom-form #name,
+  .dark-custom-form #status,
+  .dark-custom-form #idLocation{
+    background-color: #00060c;
+    color: white;
+  }
+
+  
+  .dark-custom-a{
+    text-decoration: none;
+    color:white;
+  }
+
+  .dark-custom-btn {
+    background-color: #1f2b36;
+    color: white !important;
+    border: #1f2d3d;
+    margin-right:2px ;
+  }
+  
+  .dark-custom-btn-secondary {
+    background-color: #5f6061;
+    color: white !important;
+    border: #1f2d3d;
+    margin-right:2px ;
+  }
+
+  .dark-custom-btn-danger{
+    background-color:#b33939  ;
+    color: white !important;
+  }
+
+  .dark-custom-content{
+    background-color: #1f2b36;
+    color: white !important;
+  
+  }
+  
+  .dark-custom-div,
+  .dark-location-details-title{
+    background-color: #00060c;
+    color: white !important;
+  
+  }
+  
+  

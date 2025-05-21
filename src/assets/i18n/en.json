@@ -1,0 +1,143 @@
+{
+    
+
+    "navbar":{
+        "title":"Online Self-Study Center",
+        "language":"Language",
+        "settings":"Settings",
+        "theme-light":"Theme Ligth",
+        "theme-dark":"Theme Darck"
+    },
+
+    "sidebar": {
+        "home": "Home",
+        "devices": "Devices",
+        "locations": "Locations",
+        "reports": "Reports",
+        "measures": "Measurements"
+    },
+
+    "devices": {
+        "title":"Devices",
+        "nav1": "Creation",
+        "nav2": "Update",
+        "nav3": "Location",
+        "nav4": "Status",
+        "label1": "Creation Date",
+        "labelcheck1": "Before",
+        "labelcheck2": "After",
+        "label2": "Start Date",
+        "label3": "End Date",
+        "label4": "Update Date",
+        "label5": "Location ID",
+        "label6": "Device Status",
+        "labelall": "All",
+        "lablelcheckActive": "Active",
+        "lablelcheckInactive": "Inactive",
+        "labelSerch": "Search",
+        "labelClear": "Clear",
+        "table-title": "Device Name",
+        "lable-buttom1": "New Device",
+        "modal-title": "New Device",
+        "labelmodal1": "Device Name",
+        "labelmodal2": "Device Status",
+        "labelmodal3": "Location ID:",
+        "label-bottom-cancel": "Cancel",
+        "label-bottom-save": "Save"
+    },  
+
+    "device-detail": {
+        "title1":"Device detail",
+        "Id": "ID",
+        "name-device": "Name",
+        "state": "Activity Status:",
+        "date1": "Creation Date",
+        "date2": "Update Date",
+        "locationid": "Location Identifier",
+        "return": "Return to List",
+        "title": "Update Device",
+        "name": "Name",
+        "status": "Activity Status",
+        "idLocation": "Location Identifier",
+        "label-bottom-update": "Update",
+        "modaltitle": "Delete Device",
+        "ID": "ID",
+        "modalName": "Name",
+        "label-bottom-cancel": "Cancel",
+        "label-bottom-Delete": "Delete"
+    },
+
+    "locations": {
+        "title": "Locations",
+        "table-title": "Location Name",
+        "lable-buttom1": "New Location",
+        "modal-title": "New Location",
+        "labelmodal1": "Location Name",
+        "label-bottom-cancel": "Cancel",
+        "label-bottom-save": "Save"
+    },
+
+    "locations-detail": {
+        "title1": "Location Details",
+        "Id": "ID",
+        "date":"Fecha",
+        "return": "Return to List",
+        "title": "Update Location",
+        "name": "Name",
+        "label-bottom-update": "Update",
+        "modaltitle": "Delete Location",
+        "ID": "ID",
+        "modalName": "Name",
+        "label-bottom-cancel": "Cancel",
+        "label-bottom-Delete": "Delete"
+    },
+
+    "measures": {
+        "nav1": "Voltage",
+        "nav2": "Level",
+        "nav3": "Luminosity",
+        "nav4": "Distance",
+        "label1": "Date",
+        "labelcheck1": "Before",
+        "labelcheck2": "After",
+        "label2": "Start Date",
+        "label3": "End Date",
+        "label4": "Update Date",
+        "label5": "Device ID",
+        "label6": "Device Status",
+        "labelSerch": "Search",
+        "labelClear": "Clear",
+        "label-bottom-export": "Export",
+        "label-bottom-resrore": "Reset",
+
+        "voltageTitle": "Voltage by Device",
+        "voltageYAxis": "Voltage (V)",
+        "levelTitle": "Level by Device",
+        "levelYAxis": "Level (m)",
+        "lightTitle": "Brightness by Device",
+        "lightYAxis": "Luminosity (lx)",
+        "distanceTitle": "Distance by Device",
+        "distanceYAxis": "Distance (m)",
+        "xAxisLabel": "Time"
+    },
+
+    "dashboard": 
+    {
+        "title": "Welcome to the Online Self-Study Center",
+        "subtitle": "System developed as a personal project to monitor measuring devices and generate reports.",
+        "description": "View your device data in real time."
+    },
+
+    "reports": {
+        "title": "Report Generation",
+        "description": "Explore technical reports based on historical data collected by measurement sensors.",
+        "point1": "Data filtering by date, location, and sensor type.",
+        "point2": "Export of reports in visual formats.",
+        "point3": "Detailed history for analysis and decision-making.",
+        "note": "This section is key to demonstrating analytical skills in data handling."
+    }
+
+  
+
+
+}

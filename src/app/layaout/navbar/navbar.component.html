@@ -1,0 +1,41 @@
+<div [ngClass]="{'dark-navbar':isDarkMode, 'light-navbar':!isDarkMode, 'navbar':true}">
+  <div class="navbar-title">{{ 'navbar.title' | translate }}</div>
+
+  <div class="navbar-menu">
+    <!-- Menú de Idioma -->
+    <div class="dropdown">
+  <button class="nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+    🌐 {{ 'navbar.language' | translate }}
+  </button>
+  <ul [ngClass]="{'dropdown-menu': true, 'dark-a': isDarkMode, 'light-a': !isDarkMode}">
+    <li *ngFor="let language of ['es', 'en']">
+      <a class="dropdown-item" 
+         [ngClass]="{'active': multilangService.languageSignal() === language}"
+         (click)="toggleLanguage(language)">
+        <img [src]="getLanguageIconClass(language)" width="20" class="me-2">
+        {{ getLanguageName(language) }}
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <!-- Menú de Ajustes -->
+  <div class="dropdown">
+    <button class="nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+      ⚙️ {{ 'navbar.settings' | translate }}
+    </button>
+      <ul [ngClass]="{'dropdown-menu': true, 'dark-a': isDarkMode, 'light-a': !isDarkMode}">
+        <li>
+          <a class="dropdown-item" [ngClass]="{ 'active-theme': !isDarkMode }" (click)="setTheme('light')">
+            🌞 {{ 'navbar.theme-light' | translate }}
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" [ngClass]="{ 'active-theme': isDarkMode }" (click)="setTheme('dark')">
+            🌙 {{ 'navbar.theme-dark' | translate }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

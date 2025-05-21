@@ -1,0 +1,60 @@
+<main [ngClass]="{'dark-content':isDarkMode, 'light-content':!isDarkMode,'content':true}">
+  <h2>{{'locations.title'|translate}}</h2>
+  <div class="custom-table">
+    <table [ngClass]="(isDarkMode ? 'dark-custom-table' : 'light-custom-table')">
+      <thead>
+        <tr>
+          <th [ngClass]="isDarkMode ? 'dark-custom-table th' : 'light-custom-table th'">N°</th>
+          <th [ngClass]="isDarkMode ? 'dark-custom-table th' : 'light-custom-table th'" >{{'locations.table-title'|translate}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let location of locations">
+          <td>{{ location.locationID }}</td>
+          <td>
+            <a [ngClass]="isDarkMode ? 'dark-a' : 'light-a'" [routerLink]="['/Location', location.locationID]">
+              {{ location.nameLocation }}
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div [ngClass]="{'dark-custom-div' :isDarkMode, 'light-custom-div':!isDarkMode, 'mt-3':true}">
+  <button [ngClass]="{'dark-custom-btn' :isDarkMode, 
+  'light-custom-btn':!isDarkMode,
+  'btn':true,
+  'btn-primary':true,
+  'mb-3':true
+  }" data-bs-toggle="modal" data-bs-target="#locationModal">
+    <i class="bi bi-plus-lg me-2"></i>
+    {{'locations.lable-buttom1'|translate}}
+  </button>
+  </div>
+</main>
+
+
+<!-- Modal -->
+<div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div  [ngClass]="{'dark-custom-content' :isDarkMode, 'light-custom-content':!isDarkMode, 'modal-content':true}">
+      <div class="modal-header">
+        <h5 class="modal-title" id="locationModalLabel">{{'locations.modal-title'|translate}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body px-4">
+        <form (ngSubmit)="saveLocation()">
+          <div class="mb-3">
+            <label for="name" class="form-label fw-bold">{{'locations.labelmodal1'|translate}}</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="location.nameLocation" name="name" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'locations.label-bottom-cancel'|translate}}</button>
+            <button type="submit" class="btn btn-primary">{{'locations.label-bottom-save'|translate}} </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

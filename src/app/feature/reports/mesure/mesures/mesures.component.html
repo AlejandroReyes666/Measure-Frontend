@@ -1,0 +1,168 @@
+
+<main [ngClass]="{'dark-content':isDarkMode, 'light-content':!isDarkMode,'content':true}">
+
+  <ul [ngClass]="{
+      'dark-nav': isDarkMode,
+      'light-nav': !isDarkMode,
+      'nav': true,
+      'nav-tabs': true,
+      'mb-3': true
+    }" id="medicionesTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#voltaje" type="button">
+        {{'measures.nav1'|translate}}
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nivel" type="button">
+        {{'measures.nav2'|translate}}
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#luz" type="button">
+        {{'measures.nav3'|translate}}
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#distancia" type="button">
+        {{'measures.nav4'|translate}}
+      </button>
+    </li>
+  </ul>
+
+  <div class="chart-container">
+    <div class="tab-content mt-3">
+      <div class="tab-pane fade show active" id="voltaje">
+        <button (click)="resetZoom('voltageChart')"[ngClass]="{'dark-custom-btn' :isDarkMode, 
+        'light-custom-btn':!isDarkMode,
+        'btn':true,
+        'btn-primary':true,
+        'mb-3':true
+        }">{{'measures.label-bottom-resrore'|translate}}</button>
+
+      <canvas #voltageChartCanvas id="voltageChart" width="400" height="200"  [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
+      </div>
+      <div class="tab-pane fade" id="nivel">
+        <button (click)="resetZoom('levelChart')" [ngClass]="{'dark-custom-btn' :isDarkMode, 
+        'light-custom-btn':!isDarkMode,
+        'btn':true,
+        'btn-primary':true,
+        'mb-3':true
+        }">{{'measures.label-bottom-resrore'|translate}}</button>
+
+        <canvas #levelChartCanvas id="levelChart" width="400" height="200"  [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
+      </div>
+      <div class="tab-pane fade" id="luz">
+        <button (click)="resetZoom('lightChart')" [ngClass]="{'dark-custom-btn' :isDarkMode, 
+          'light-custom-btn':!isDarkMode,
+          'btn':true,
+          'btn-primary':true,
+          'mb-3':true
+          }">{{'measures.label-bottom-resrore'|translate}}</button>
+
+        <canvas #lightChartCanvas id="lightChart" width="400" height="200" [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
+      </div>
+
+      <div class="tab-pane fade" id="distancia">
+        <button (click)="resetZoom('distanceChart')" [ngClass]="{'dark-custom-btn' :isDarkMode, 
+          'light-custom-btn':!isDarkMode,
+          'btn':true,
+          'btn-primary':true,
+          'mb-3':true
+          }">{{'measures.label-bottom-resrore'|translate}}</button>
+        <canvas #distanceChartCanvas id="distanceChart" width="400" height="200" [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
+      </div>
+    </div>
+  </div>
+
+
+  <div [ngClass]="{ 'dark-custom-form': isDarkMode, 'light-custom-form': !isDarkMode ,'container-fluid':true}">
+    <div class="row g-3">
+      <!-- ID Dispositivo -->
+      <div class="col-md-3">
+        <label for="idDispositivo" class="form-label">
+          {{'measures.label5'|translate}}
+        </label>
+          <input type="number" id="idDispositivo" class="form-control filter-input" [(ngModel)]="filters.idDispositivo" >
+      </div>
+
+      <!-- Fecha -->
+      <div class="col-md-3">
+        <label for="fecha" class="form-label">
+          {{'measures.label1'|translate}}
+        </label>
+        <input type="date" id="fecha" [(ngModel)]="filters.fecha"
+        [ngClass]="{ 'dark-input': isDarkMode, 'light-input': !isDarkMode,'form-control':true }">
+
+        <div class="form-check form-check-inline mt-2">
+          <input type="checkbox" id="antes" class="form-check-input" [(ngModel)]="filters.fechaAntes" (change)="filters.fechaDespues=false">
+          <label for="antes" class="form-check-label">
+            {{'measures.labelcheck1'|translate}}
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="checkbox" id="despues" class="form-check-input" [(ngModel)]="filters.fechaDespues" (change)="filters.fechaAntes=false">
+          <label for="despues" class="form-check-label">
+            {{'measures.labelcheck2' |translate}}
+          </label>
+        </div>
+      </div>
+
+      <!-- Fecha consultas inicio -->
+      <div class="col-md-3">
+        <label for="fechaInicio" class="form-label">
+          {{'measures.label2'|translate}}
+        </label>
+        <input type="date" id="fechaInicio"  [(ngModel)]="filters.fechaInicio"
+          [ngClass]="{ 'dark-input': isDarkMode, 'light-input': !isDarkMode,'form-control':true }">
+      </div>
+
+      <!-- Fecha consultas fin -->
+      <div class="col-md-3">
+        <label for="fechaFin" class="form-label">
+          {{'measures.label3'|translate}}
+        </label>
+        <input type="date" id="fechaFin" 
+        [ngClass]="{ 'dark-input': isDarkMode, 'light-input': !isDarkMode,'form-control':true }" [(ngModel)]="filters.fechaFin">
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+
+    <!-- Botones -->
+  <div  class="d-flex justify-content-between align-items-center mb-3 px-5 gap-2 flex-wrap">
+      
+        <button [ngClass]="{'dark-custom-btn' :isDarkMode, 
+        'light-custom-btn':!isDarkMode,
+        'btn':true,
+        'btn-primary':true,
+        'mb-3':true
+        }" (click)="filtrarMediciones()">
+        {{'measures.labelSerch'|translate}}
+      </button>
+
+
+
+      <button [ngClass]="{'dark-custom-btn-secondary':isDarkMode, 
+        'light-custom-btn-secondary':!isDarkMode,
+        'btn':true,
+        'btn-secondary':true,
+        'mb-3':true
+        }" (click)="limpiarfiltro()"> 
+        {{'measures.labelClear'|translate}}
+      </button>
+
+
+      <button [ngClass]="{'dark-custom-btn-secondary':isDarkMode, 
+        'light-custom-btn-secondary':!isDarkMode,
+        'btn':true,
+        'btn-secondary':true,
+        'mb-3':true
+        }" (click)="generateDataExcel(this.measure)">
+        {{'measures.label-bottom-export'|translate}}
+      </button>
+
+  </div>
+</main>

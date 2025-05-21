@@ -1,0 +1,144 @@
+{
+    
+    "navbar":{
+        "title":"sistema de adquisición de datos",
+        "language":"Idioma",
+        "settings":"Ajustes",
+        "theme-light":" Tema Claro",
+        "theme-dark":"Tema Oscuro"
+    },
+
+    "sidebar":{
+        "home":"Inicio",
+        "devices":"Dispositivos",
+        "locations":"Ubicaciones",
+        "reports":"Reportes",
+        "measures":"Mediciones"
+    },
+
+    "devices":{
+        "title":"Dispositivos",
+        "nav1":"Creación",
+        "nav2":"Actualización",
+        "nav3":"Ubicación",
+        "nav4":"Estado",
+        "label1":"Fecha de Creación",
+        "labelcheck1":"Antes",
+        "labelcheck2":"Después",
+        "label2":"Fecha  Inicio",
+        "label3":"Fecha Fin",
+        "label4":"Fecha de Actualización",
+        "label5":"ID Ubicación",
+        "label6":"Estado del Dispositivo",
+        "labelall":"Todos",
+        "lablelcheckActive":"Activo",
+        "lablelcheckInactive":"Inactivo",
+        "labelSerch":"Buscar",
+        "labelClear":"Limpiar",
+        "table-title":"Nombre del Dispositivo",
+        "lable-buttom1":"Nuevo Dispositivo",
+        "modal-title":"Nuevo Dispositivo",
+        "labelmodal1":"Nombre del Dispositivo",
+        "labelmodal2":"Estado del Dispositivo",
+        "labelmodal3":"Id de la ubicación:",
+        "label-bottom-cancel":"cancelar",
+        "label-bottom-save":"Guardar"
+        
+    },
+
+    "device-detail":{
+        "title1":"Detalles del dipositivo",
+        "Id":"ID",
+        "name-device":"Nombre",
+        "state":"Estado de actividad:",
+        "date1":"Fecha de creación",
+        "date2":"Fecha de actualización",
+        "locationid":"Identificador de la Ubicación",
+        "return":"Volver a la lista",
+        "title":"Actualizar Dispositivo",
+        "name":"Nombre",
+        "status":"Estado de actividad",
+        "idLocation":"Identificador de la ubicación",
+        "label-bottom-update":"Actualizar",
+        "modaltitle":"Eliminar dipositivo",
+        "ID":"ID",
+        "modalName":"Nombre",
+        "label-bottom-cancel":"Cancelar",
+        "label-bottom-Delete":"Eliminar"
+
+    },
+
+    "locations":{
+        "title":"Ubicaciones",
+        "table-title":"Nombre de la ubicación",
+        "lable-buttom1":"Nueva ubicación",
+        "modal-title":"Nueva Ubicación",
+        "labelmodal1":"Nombre de la Ubicación",
+        "label-bottom-cancel":"cancelar",
+        "label-bottom-save":"Guardar"
+        
+    },
+
+    "locations-detail":{
+        "title1":"Detalles de la Ubicación",
+        "Id":"ID",
+        "return":"Volver a la lista",
+        "title":"Actualizar ubicación",
+        "name":"Nombre",
+        "label-bottom-update":"Actualizar",
+        "modaltitle":"Eliminar Ubicación",
+        "ID":"ID",
+        "modalName":"Nombre",
+        "label-bottom-cancel":"Cancelar",
+        "label-bottom-Delete":"Eliminar"
+
+    },
+
+    "measures":{
+        
+        "nav1":"Voltaje",
+        "nav2":"Nivel",
+        "nav3":"Luminocidad",
+        "nav4":"Distancia",
+        "label1":"Fecha",
+        "labelcheck1":"Antes",
+        "labelcheck2":"Después",
+        "label2":"Fecha  Inicio",
+        "label3":"Fecha Fin",
+        "label4":"Fecha de Actualización",
+        "label5":"ID Dispositivo",
+        "label6":"Estado del Dispositivo",
+        "labelSerch":"Buscar",
+        "labelClear":"Limpiar",
+        "label-bottom-export":"Exportar",
+        "label-bottom-resrore":"Restablecer",
+
+        "voltageTitle": "Voltaje por Dispositivo",
+        "voltageYAxis": "Voltaje (V)",
+        "levelTitle": "Nivel por el Dispositivo",
+        "levelYAxis": "Nivel (m)",
+        "lightTitle": "Luminocidad por Dispositivo",
+        "lightYAxis": "Lumex (lx)",
+        "distanceTitle": "Distancia por Dispositivo",
+        "distanceYAxis": "Distancia (m)",
+        "xAxisLabel": "Hora"
+                
+    },
+
+    "dashboard":{
+        "title":"Bienvenido al Centro de Autoestudio Online",
+        "subtitle":"Sistema desarrollado como proyecto personal para monitorear dispositivos de medición y generar reportes.",
+        "description":"Visualiza en tiempo real los datos de tus dispositivos."
+    },
+
+    "reports": {
+        "title": "Generación de Reportes",
+        "description": "Explora reportes técnicos basados en datos históricos obtenidos por los sensores de medición.",
+        "point1": "Filtrado de datos por fechas, ubicación y tipo de sensor.",
+        "point2": "Exportación de reportes en formatos visuales.",
+        "point3": "Historial detallado para análisis y toma de decisiones.",
+        "note": "Esta sección es clave para mostrar habilidades analíticas en el manejo de datos."
+    }
+
+
+}

@@ -1,0 +1,196 @@
+/* Contenedor del contenido principal */
+.content {
+  position: absolute;
+  top: 60px;        /* Altura del navbar */
+  left: 250px;      /* Ancho del sidebar */
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.icon-big {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.tititle {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.subtititle{
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.description .item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.nota {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* Colores */
+.icon-dark {
+  color: white;
+}
+
+.icon-light {
+  color: black;
+}
+
+.note-dark {
+  color: #d1d5db; /* Gris claro */
+}
+
+.note-light {
+  color: #4b5563; /* Gris oscuro */
+}
+
+/* Animaciones */
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.7s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.7s ease-out;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Navbar visual */
+.dark-content {
+  background-color: #212529;
+  color: white;
+}
+
+.light-content {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+
+.dark-box {
+  background-color: #134cbd1c;
+  color: white;
+}
+
+.light-box {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+
+/* Header container z-index bajo para no tapar navbar */
+.header-container.navbar {
+  position: relative;
+  z-index: 0;
+}
+
+
+
+
+
+
+
+/* Sombras y bordes para mejorar la profundidad visual */
+.shadow-box {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.rounded {
+  border-radius: 0.75rem;
+}
+
+.padded-box {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Fondo más tenue en el contenido de descripción */
+.description-box {
+  background-color: #134cbd1c; /* para modo oscuro */
+}
+
+.light-content .description-box {
+  background-color: #f8f9fa; /* gris claro en modo claro */
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+
+.icon-big {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+/* Iconos generales */
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}

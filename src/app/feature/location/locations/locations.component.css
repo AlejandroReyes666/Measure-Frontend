@@ -1,0 +1,218 @@
+.content {
+  position: absolute;
+  top: 60px;        /* Altura del navbar */
+  left: 250px;      /* Ancho del sidebar */
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+
+.custom-table {
+  max-width: 1000px;
+  margin: 30px auto; /* Centra la tabla horizontalmente con margen vertical */
+  padding: 20px;
+
+}
+
+.custom-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.custom-table th, .custom-table td {
+  text-align: center;
+  padding: 12px;
+  border-bottom: 1px solid #2a3548;
+  color: #ffffff;
+}
+
+.custom-table thead {
+  background-color: #1f2b3a;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+.custom-table tbody tr {
+ text-align: center;
+}
+
+
+.custom-table tbody tr:hover {
+  background-color: #2a3548;
+  transition: background-color 0.3s ease;
+}
+
+.light-custom-table {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    width: 100%;
+    table-layout: fixed;
+}
+  
+  .light-custom-table thead {
+    background-color: #00060c;
+    color: white;
+  }
+  
+  .light-custom-table tbody tr:hover {
+    background-color: #ecf0f1;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .light-custom-table th,
+  .light-custom-table td {
+    padding: 12px;
+    text-align: left;
+    color: #00060c;
+    word-wrap: break-word;
+  }
+  
+  .light-custom-table th {
+    font-weight: bold;
+    text-align: center;
+  
+   
+  }
+  
+  .light-custom-table td {
+    border-top: 1px solid #ddd;
+    text-align: center;
+  
+    
+  }
+  
+  .light-a {
+    text-align: center;
+    text-decoration: none;
+    color: #00060c;
+  }
+  
+  .light-custom-btn {
+    background-color: #007bff;
+    color: white !important;
+  }
+
+
+  .light-custom-content{
+    background-color:white;
+    color: #00060c!important;
+  
+  }
+
+  .light-custom-content #name{
+    background-color: white;
+    color:#00060c !important;
+  
+  }
+
+  .light-custom-div{
+    background-color:white;
+    color: #00060c!important;
+    text-align: center;
+  
+  }
+
+
+  .light-content {
+    background-color: #ffffff;
+    color: #212529;
+  }
+    
+
+
+  /* Tabla estilo oscuro */
+.dark-custom-table {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1f2d3d;
+  width: 100%;
+  table-layout: fixed;
+  border-radius: 12px;
+  background-color: #121e2c; /* Fondo estilizado */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra para levantarla visualmente */
+  overflow-x: auto;
+}
+
+.dark-custom-table thead {
+  background-color: #1f2d3d;
+  color: white;
+}
+
+/* Fila intercalada en modo oscuro */
+.dark-custom-table tbody tr:nth-child(odd) {
+  background-color: #1f2d3d;
+}
+
+.dark-custom-table tbody tr:nth-child(even) {
+  background-color: #2e3f54; /* Un poco más claro */
+}
+
+.dark-custom-table tbody tr:hover {
+  background-color: #3e5a74; /* Más claro al pasar el mouse */
+  transition: background 0.3s ease-in-out;
+}
+
+.dark-custom-table th,
+.dark-custom-table td {
+  padding: 12px;
+  text-align: left;
+  color: white;
+  word-wrap: break-word;
+}
+
+.dark-custom-table th {
+  font-weight: bold;
+  text-align: center;
+}
+
+.dark-custom-table td {
+  border-top: 1px solid #44576b;
+  text-align: center;
+}
+
+.dark-a {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.dark-custom-btn {
+  background-color: #1f2b36;
+  color: white !important;
+  border: #1f2d3d;
+  margin-right:2px ;
+}
+
+.dark-custom-content{
+  background-color: #1f2b36;
+  color: white !important;
+
+}
+
+.dark-custom-content #name{
+  background-color: #00060c;
+  color: white !important;
+
+}
+
+.dark-custom-div{
+  background-color: #00060c;
+  color: white !important;
+  text-align: center;
+
+}
+
+
+.light-custom-table, .dark-custom-table {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.dark-content {
+  background-color: #00060c;
+  color: white;
+}

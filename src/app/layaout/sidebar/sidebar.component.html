@@ -1,0 +1,10 @@
+ 
+<div class="sidebar" [ngClass]="isDarkMode ? 'dark-sidebar' : 'light-sidebar'">
+  <ul>
+    <li><a [routerLink]="['/']" routerLinkActive="actived" [routerLinkActiveOptions]="{ exact: true }">🏠 {{'sidebar.home'|translate}}</a></li>
+    <li><a [routerLink]="['/Devices']" routerLinkActive="actived">📟 {{'sidebar.devices'|translate}}</a></li>
+    <li><a [routerLink]="['/Locations']" routerLinkActive="actived">📍 {{'sidebar.locations'|translate}}</a></li>
+    <li><a [routerLink]="['/Reports']" routerLinkActive="actived">📊 {{'sidebar.reports'|translate}}</a></li>
+    <li><a [routerLink]="['/Mesures']" routerLinkActive="actived">📈 {{'sidebar.measures'|translate}}</a></li>
+  </ul>
+</div>

@@ -1,0 +1,154 @@
+.content {
+  position: absolute;
+  top: 60px;        /* Altura del navbar */
+  left: 250px;      /* Ancho del sidebar */
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+
+.chart-container {
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  position: relative;
+}
+
+
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+   
+  }
+  
+  /*Tema claro*/
+
+  .light-custom-chart{
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    color: #00060c;
+
+  }
+
+
+  .light-nav,
+  .light-content{
+    color: #00060c;
+    background-color: #fff;
+  }
+  
+  
+  
+  .light-nav .nav-link.active {
+    background-color: #007bff;
+    color: white !important;
+  }
+  
+  .light-nav .nav-link {
+    color: black;
+  }
+
+.light-custom-form,
+.light-custom-form #fecha,
+.light-custom-form #fechaInicio,
+.light-custom-form #fechaFin,
+.light-custom-form #idDispositivo{
+  background-color:white ;
+  color: #00060c;
+}
+
+
+.light-custom-btn {
+  background-color: #007bff;
+  color: white !important;
+}
+
+.light-custom-btn-secondary {
+  background-color:#85c1e9 ;
+  color: white !important;
+}
+
+
+.light-input {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ced4da;
+}
+
+  /*Tema oscuro*/
+
+  .dark-custom-chart{
+    border: 1px solid #00060c;
+    background-color: #1f2b36;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    color: white;
+
+  }
+
+  .dark-nav{
+    color: white;
+    background-color: #44576b;
+  }
+  
+  
+  .dark-nav .nav-link.active {
+    background-color: #1f2b36;
+    color: white !important;
+  }
+  
+  .dark-nav .nav-link {
+    color: white;
+  }
+
+  .dark-custom-form,
+  .dark-content{
+    background-color: #00060c;
+    color: white;
+  }
+
+
+.dark-custom-form #fecha,
+.dark-custom-form #fechaInicio,
+.dark-custom-form #fechaFin,
+.dark-custom-form #idDispositivo{
+  background-color: #00060c;
+  color: white;
+}
+
+.dark-custom-btn {
+  background-color: #1f2b36;
+  color: white !important;
+  border: #1f2d3d;
+  margin-right:2px ;
+}
+
+.dark-custom-btn-secondary {
+  background-color: #5f6061;
+  color: white !important;
+  border: #1f2d3d;
+  margin-right:2px ;
+}
+
+.dark-input {
+  background-color: #1e1e2f;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+
+/* Cambiar color del ícono nativo en modo oscuro */
+.dark-input::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* vuelve blanco el ícono */
+  cursor: pointer;
+}
+
+/* Firefox (opcional) */
+.dark-input::-moz-calendar-picker-indicator {
+  filter: invert(1);
+}

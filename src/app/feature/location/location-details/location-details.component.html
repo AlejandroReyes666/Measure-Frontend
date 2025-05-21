@@ -1,0 +1,84 @@
+<main [ngClass]="{'dark-content':isDarkMode, 'light-content':!isDarkMode,'content':true}">
+  <div [ngClass]="{'location-details-container': true, 'dark-custom-div': isDarkMode, 'light-custom-div': !isDarkMode}">
+    <h2 [ngClass]="{'location-details-container': true, 'dark-location-details-title': isDarkMode, 'light-location-details-title': !isDarkMode,'location-details-title':true}"> 
+    {{'locations-detail.title1'|translate}}
+    </h2>
+
+    <div *ngIf="location" class="location-details-list">
+      <li><strong>{{'locations-detail.ID'|translate}}</strong> {{ location.locationID }}</li>
+      <li><strong>{{'locations-detail.name'|translate}}</strong> {{ location.nameLocation }}</li>
+    </div>
+
+    <div class="back-button">
+      <a  routerLink="/Locations" [ngClass]="{'dark-custom-a' :isDarkMode, 'light-custom-a':!isDarkMode}">
+        {{'locations-detail.return'|translate}}
+      </a>
+    </div>
+  </div>
+
+
+  <div [ngClass]="{'location-detail-container': true, 'dark-custom-div': isDarkMode, 'light-custom-div': !isDarkMode}">
+    <h2 [ngClass]="{'location-detail-container': true, 'dark-location-details-title': isDarkMode, 'light-location-details-title': !isDarkMode,'location-details-title':true}">
+        {{'locations-detail.title'|translate}}
+    </h2>
+
+    <form (ngSubmit)="saveOrUpdateLocation()">
+      <div [ngClass]="{'dark-custom-form' :isDarkMode, 
+      'light-custom-form':!isDarkMode,
+      'form-group':true}">
+        <label for="name">{{'locations-detail.name'|translate}}:</label>
+        <input id="name" type="text" class="form-control" [(ngModel)]="location.nameLocation" name="name" required>
+      </div>
+      
+      <br>
+
+      <div class="d-flex justify-content-between">
+        <button type="submit" [ngClass]="{'dark-custom-btn' :isDarkMode, 
+        'light-custom-btn':!isDarkMode,
+        'btn':true,
+        'btn-primary':true,
+        }">
+          {{'locations-detail.label-bottom-update'|translate}}
+        </button>
+      
+
+
+      <button type="button" [ngClass]="{'dark-custom-btn-secondary':isDarkMode, 
+      'light-custom-btn-secondary':!isDarkMode,
+      'btn':true,
+      'btn-secondary':true,
+      }" routerLink="/Locations">
+        {{'locations-detail.label-bottom-cancel'|translate}}
+      </button>
+
+      <button type="button" [ngClass]="{'dark-custom-btn-danger':isDarkMode, 
+      'light-custom-btn-danger':!isDarkMode,
+      'btn':true,
+      'btn-btn-danger':true,
+      }"  data-bs-toggle="modal" data-bs-target="#deleteModal">
+        {{'locations-detail.label-bottom-Delete'|translate}}
+      </button>
+    </div>
+    </form>
+  </div>
+</main>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div [ngClass]="{'dark-custom-content' :isDarkMode, 'light-custom-content':!isDarkMode, 'modal-content':true}">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">{{'locations-detail.modaltitle'|translate}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>{{'locations-detail.ID'|translate}}:</strong> {{ location.locationID }}</p>
+        <p><strong>{{'locations-detail.modalName'|translate}}</strong> {{ location.nameLocation }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'locations-detail.label-bottom-cancel'|translate}}</button>
+        <button type="button" class="btn btn-danger" (click)="deleteLocation()">{{'locations-detail.label-bottom-Delete'|translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>

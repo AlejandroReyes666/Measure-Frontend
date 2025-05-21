@@ -6,8 +6,48 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link id="app-theme" rel="stylesheet" href="">
+  
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || 'light';
+      const className = theme === 'dark' ? 'dark-mode' : 'light-mode';
+      document.documentElement.classList.add(className);
+      document.body.classList.add(className);
+    })();
+  </script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    html.dark-mode, body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+    html.light-mode, body.light-mode {
+      background-color: #ffffff;
+      color: black;
+    }
+
+    /* loader temporal */
+    #app-loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      font-size: 1.2rem;
+    }
+  </style>
 </head>
 <body>
+  <div id="app-loader">Cargando aplicación...</div>
   <app-root></app-root>
 </body>
 </html>

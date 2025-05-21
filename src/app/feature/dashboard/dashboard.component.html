@@ -1,0 +1,46 @@
+<main [ngClass]="{'dark-content':isDarkMode, 'light-content':!isDarkMode,'content':true}">
+  <!-- Encabezado y descripción -->
+  <div 
+    [ngClass]="{
+      'dark-box': isDarkMode,
+      'light-box': !isDarkMode,
+      'header-container':true,
+      'shadow-box': true,
+      'rounded': true,
+      'padded-box': true,
+      'animate-fade-in-down': true
+    }">
+
+    <div [ngClass]="{'header':true}">
+      <svg class="icon-big"
+        [ngClass]="{ 'icon-dark': isDarkMode, 'icon-light': !isDarkMode }"
+        xmlns="http://www.w3.org/2000/svg" 
+        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M3 12l2-2 4 4 8-8 4 4M21 21H3" />
+      </svg>
+      <h1 class="title">
+        {{ 'dashboard.title' | translate }}
+      </h1>
+    </div>
+
+    <p [ngClass]="{'subtitle':true}">
+      
+      {{ 'dashboard.subtitle' | translate }}
+    </p>
+
+    <div [ngClass]="{ 'description-box': true}">
+      <div class="item animate-slide-in-left delay-100">
+        <svg class="icon"
+          [ngClass]="{ 'icon-dark': isDarkMode, 'icon-light': !isDarkMode }"
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M5 13l4 4L19 7" />
+        </svg>
+        <span>
+          {{ 'dashboard.description' | translate }}
+        </span>
+      </div>
+    </div>
+
+  </div>
+</main>

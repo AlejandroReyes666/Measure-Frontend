@@ -1,0 +1,231 @@
+<main [ngClass]="{'content': true, 'dark-custom-div': isDarkMode, 'light-custom-div': !isDarkMode}">
+  <h2>{{'devices.title'|translate}}</h2>
+
+  <!-- Pestañas de Filtros -->
+  <ul [ngClass]="{
+    'dark-nav': isDarkMode,
+    'light-nav': !isDarkMode,
+    'nav': true,
+    'nav-tabs': true,
+    'filters-tabs':true,
+    'mb-3': true
+  }">
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="selectedTab === 'creacion'" (click)="selectedTab = 'creacion'">{{'devices.nav1'|translate}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="selectedTab === 'actualizacion'" (click)="selectedTab = 'actualizacion'">{{'devices.nav2'|translate}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="selectedTab === 'ubicacion'" (click)="selectedTab = 'ubicacion'">{{'devices.nav3'|translate}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="selectedTab === 'estado'" (click)="selectedTab = 'estado'">{{'devices.nav4'|translate}}</a>
+    </li>
+  </ul>
+
+  <!-- Filtros por pestaña -->
+
+  <!-- CREACIÓN -->
+  <div *ngIf="selectedTab === 'creacion'" [ngClass]="{'dark-custom-form' :isDarkMode, 
+  'light-custom-form':!isDarkMode,
+  'row':true,
+  'g-2':true,
+  'mb-3':true
+  }">
+    <div class="col-md-6 col-lg-4">
+      <label for="fechaCreacion" class="form-label">{{'devices.label1'|translate}}</label>
+      <div class="checkbox-group">
+        <input type="date" id="fechaCreacion" [ngClass]="{ 'dark-input': isDarkMode, 'light-input': !isDarkMode,'form-control filter-input':true }"[(ngModel)]="filters.fechaCreacion">
+        <label>
+          <input type="checkbox" [(ngModel)]="filters.fechaAntesCreacion" (change)="filters.fechaDespuesCreacion=false">{{'devices.labelcheck1'|translate}} 
+        </label>
+        <label>
+          <input type="checkbox" [(ngModel)]="filters.fechaDespuesCreacion" (change)="filters.fechaAntesCreacion=false"> {{'devices.labelcheck2'|translate}}
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <label for="fechaInicio" class="form-label">{{'devices.label2'|translate}}</label>
+      <div class="position-relative">
+        <input type="date" id="fechaInicioCreacion"
+                [(ngModel)]="filters.fechaInicio"
+          [ngClass]="{ 'dark-input': isDarkMode, 'light-input': !isDarkMode,'form-control filter-input':true }">
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <label for="fechaFin" class="form-label">{{'devices.label3'|translate}}</label>
+      <input type="date" id="fechaFinCreación" [ngClass]="{ 'dark-input': isDarkMode, 'light-input': !isDarkMode,'form-control filter-input':true }" [(ngModel)]="filters.fechaFin">
+    </div>
+  </div>
+
+  <!-- ACTUALIZACIÓN -->
+  <div *ngIf="selectedTab === 'actualizacion'" [ngClass]="{'dark-custom-form' :isDarkMode, 
+  'light-custom-form':!isDarkMode,
+  'row':true,
+  'g-2':true,
+  'mb-3':true
+  }">
+    <div class="col-md-6 col-lg-4">
+      
+      <label for="fechaActualizacion" class="form-label">{{'devices.label4'|translate}}</label>
+      
+      <input type="date" id="fechaActualizacion"[ngClass]="{ 'dark-input': isDarkMode, 'light-input': !isDarkMode,'form-control filter-input':true }" [(ngModel)]="filters.fechaFin" [(ngModel)]="filters.fechaActualizacion">
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" [(ngModel)]="filters.fechaAntesActualizacion" (change)="filters.fechaDespuesActualizacion=false"> {{'devices.labelcheck1'|translate}}
+        </label>
+        <label>
+          <input type="checkbox" [(ngModel)]="filters.fechaDespuesActualizacion" (change)="filters.fechaAntesActualizacion=false"> {{'devices.labelcheck2'|translate}}
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <label for="fechaInicio" class="form-label">{{'devices.label2'|translate}}</label>
+      <input type="date" id="fechaInicioActualizacion" [ngClass]="{ 'dark-input': isDarkMode, 'light-input': !isDarkMode,'form-control filter-input':true }" [(ngModel)]="filters.fechaFin" [(ngModel)]="filters.fechaInicioAct">
+    </div>
+
+    <div class="col-md-6 col-lg-4">
+      <label for="fechaFin" class="form-label">{{'devices.label3'|translate}}</label>
+      <input type="date" id="fechaFinActualizacion" [ngClass]="{ 'dark-input': isDarkMode, 'light-input': !isDarkMode,'form-control filter-input':true }" [(ngModel)]="filters.fechaFin" [(ngModel)]="filters.fechaFinAct">
+    </div>
+  </div>
+
+  <!-- UBICACIÓN -->
+  <div *ngIf="selectedTab === 'ubicacion'" [ngClass]="{'dark-custom-form' :isDarkMode, 
+  'light-custom-form':!isDarkMode,
+  'row':true,
+  'g-2':true,
+  'mb-3':true,
+  'form-group mb-3':true
+  }">
+    <div class="col-md-6 col-lg-4">
+      <label id="location" for="idUbicacion" class="form-label">{{'devices.label5'|translate}}</label>
+      <input type="number" id="idUbicacion" class="form-control filter-input" [(ngModel)]="filters.idUbicacion">
+    </div>
+  </div>
+
+  <!-- ESTADO -->
+  <div *ngIf="selectedTab === 'estado'" [ngClass]="{'dark-custom-form' :isDarkMode, 
+  'light-custom-form':!isDarkMode,
+  'row':true,
+  'g-2':true,
+  'mb-3':true
+  }">
+    <div  class="col-md-6 col-lg-4">
+      <label id="states" for="state" class="form-label">{{'devices.label6'|translate}}</label>
+      <select id="state" class="form-control filter-input" [(ngModel)]="filters.status">
+        <option value="">{{'devices.labelall'|translate}}</option>
+        <option value="activo">{{'devices.lablelcheckActive'|translate}}</option>
+        <option value="inactivo">{{'devices.lablelcheckInactive'|translate}}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Botones -->
+
+    <div  [ngClass]="{'dark-custom-div' :isDarkMode, 'light-custom-div':!isDarkMode, 'mt-3':true,'d-flex justify-content-center gap-5 mt-3':true}">
+      <button [ngClass]="{'dark-custom-btn' :isDarkMode, 
+      'light-custom-btn':!isDarkMode,
+      'btn':true,
+      'btn-primary':true,
+      'mb-3':true
+      }" (click)="filtrarDispositivos()">{{'devices.labelSerch'|translate}}
+      </button>
+      <button [ngClass]="{'dark-custom-btn-secondary':isDarkMode, 
+      'light-custom-btn-secondary':!isDarkMode,
+      'btn':true,
+      'btn-secondary':true,
+      'mb-3':true
+      }" (click)="limpiarFiltros()">{{'devices.labelClear'|translate}}</button>
+    </div>
+
+
+
+  <!-- Tabla de Dispositivos -->
+  <div class="custom-table">
+    <table [ngClass]="(isDarkMode ? 'dark-custom-table' : 'light-custom-table')">
+    <thead>
+      <tr>
+        <th [ngClass]="isDarkMode ? 'dark-custom-table th' : 'light-custom-table th'">N°</th>
+        <th [ngClass]="isDarkMode ? 'dark-custom-table th' : 'light-custom-table th'">{{'devices.table-title'|translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let devices of device">
+        <td>{{ devices.devicesId }}</td>
+        <td>
+          <a [ngClass]="isDarkMode ? 'dark-a' : 'light-a'" [routerLink]="['/Device', devices.devicesId]">
+            {{ devices.devicesName }}
+          </a>
+        </td>
+      </tr>
+
+    </tbody>
+    </table>
+  </div>
+
+
+  <!-- Botón para crear dispositivo -->
+  <div [ngClass]="{'dark-custom-div' :isDarkMode, 'light-custom-div':!isDarkMode, 'mt-3':true}">
+    <button [ngClass]="{'dark-custom-btn' :isDarkMode, 
+    'light-custom-btn':!isDarkMode,
+    'btn':true,
+    'btn-primary':true,
+    'mb-3':true
+    }" data-bs-toggle="modal" data-bs-target="#deviceModal">
+    <i class="bi bi-plus-lg me-2"></i>
+      {{'devices.lable-buttom1'|translate}}
+    </button>
+  </div>
+</main>
+
+
+<!-- Modal para crear dispositivo -->
+<div class="modal fade" id="deviceModal" tabindex="-1" aria-labelledby="deviceModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div [ngClass]="{'dark-custom-content' :isDarkMode, 'light-custom-content':!isDarkMode, 'modal-content':true}">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deviceModalLabel">{{'devices.modal-title'|translate}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form [ngClass]="{'dark-custom-form' :isDarkMode, 'light-custom-form':!isDarkMode}" (ngSubmit)="saveDevice()">
+          <div class="mb-3">
+            <label for="name" class="form-label">{{'devices.labelmodal1'|translate}}</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="devices.devicesName" name="name" required>
+
+            <label for="status" class="form-label">{{'devices.labelmodal2'|translate}}</label>
+            <input type="text" class="form-control" id="status" [(ngModel)]="devices.state" name="status" required>
+
+            <label for="idUbicacionModal" class="form-label">{{'devices.labelmodal3'|translate}}</label>
+            <input type="number" class="form-control" id="idUbicacionModal" [(ngModel)]="devices.idUbicacion"
+              (ngModelChange)="devices.idUbicacion = $event ? +$event : null" name="idUbicacionModal" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button"[ngClass]="{'dark-custom-btn-secondary':isDarkMode, 
+            'light-custom-btn-secondary':!isDarkMode,
+            'btn':true,
+            'btn-secondary':true,
+            'mb-3':true
+            }" data-bs-dismiss="modal">
+              {{'devices.label-bottom-cancel'|translate}}
+            </button>
+
+            <button type="submit" [ngClass]="{'dark-custom-btn' :isDarkMode, 
+            'light-custom-btn':!isDarkMode,
+            'btn':true,
+            'btn-primary':true,
+            'mb-3':true
+            }">
+             {{'devices.label-bottom-save'|translate}}
+          </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

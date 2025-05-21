@@ -1,0 +1,90 @@
+<div [ngClass]="{'location-details-container': true, 'dark-custom-div': isDarkMode, 'light-custom-div': !isDarkMode}">
+  <h2 [ngClass]="{'location-details-container': true, 'dark-location-details-title': isDarkMode, 'light-location-details-title': !isDarkMode,'location-details-title':true}">
+    {{'device-detail.title1'|translate}}
+  </h2>
+
+  <div *ngIf="loadDevice" class="location-details-list">
+    <li><strong>{{'device-detail.Id'|translate}}</strong> {{ device.devicesId }}</li>
+    <li><strong>{{'device-detail.name-device'|translate}}</strong> {{ device.devicesName }}</li>
+    <li><strong>{{'device-detail.state'|translate}}</strong> {{ device.state }}</li>
+    <li><strong>{{'device-detail.date1'|translate}}</strong> {{ device.createdDate }}</li>
+    <li><strong>{{'device-detail.date2'|translate}}</strong> {{ device.updatedDate }}</li>
+    <li><strong>{{'device-detail.locationid'|translate}}</strong> {{ device.idUbicacion }}</li>
+  </div>
+
+  <div class="back-button">
+    <a routerLink="/Devices" [ngClass]="{'dark-custom-a': isDarkMode, 'light-custom-a': !isDarkMode}">
+      {{'device-detail.return'|translate}}
+    </a>
+  </div>
+</div>
+
+
+<div [ngClass]="{'location-details-container': true, 'dark-custom-div': isDarkMode, 'light-custom-div': !isDarkMode}">
+  <h2 [ngClass]="{'location-details-container': true, 'dark-location-details-title': isDarkMode, 'light-location-details-title': !isDarkMode,'location-details-title':true}">
+    {{'device-detail.title'|translate}}
+  </h2>
+
+  <form (ngSubmit)="saveOrUpdateDevice()" [ngClass]="{'dark-custom-form': isDarkMode, 'light-custom-form': !isDarkMode}">
+    <div class="form-group mb-3">
+      <label for="name">{{'device-detail.name'|translate}}</label>
+      <input id="name" type="text" class="form-control" [(ngModel)]="device.devicesName" name="name" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="status">{{'device-detail.status'|translate}}</label>
+      <input id="status" type="text" class="form-control" [(ngModel)]="device.state" name="status" required>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="idLocation">{{'device-detail.idLocation'|translate}}</label>
+      <input id="idLocation" type="text" class="form-control" [(ngModel)]="device.idUbicacion" name="idLocation" required>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <button type="submit" [ngClass]="{'dark-custom-btn': isDarkMode, 'light-custom-btn': !isDarkMode}" class="btn btn-primary">
+       {{'device-detail.label-bottom-update'|translate}}
+      </button>
+
+      <button type="button" [ngClass]="{'dark-custom-btn-secondary': isDarkMode, 'light-custom-btn-secondary': !isDarkMode}" class="btn btn-secondary" routerLink="/Devices">
+        {{'device-detail.label-bottom-cancel'|translate}}
+      </button>
+
+      <button type="button" [ngClass]="{'dark-custom-btn-danger': isDarkMode, 'light-custom-btn-danger': !isDarkMode}" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+        {{'device-detail.label-bottom-Delete'|translate}}
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div [ngClass]="{'dark-custom-content' :isDarkMode, 'light-custom-content':!isDarkMode, 'modal-content':true}">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">{{'device-detail.modaltitle"'|translate}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>{{'device-detail.ID"'|translate}}</strong> {{ device.devicesId }}</p>
+        <p><strong>{{'device-detail.modalName"'|translate}}</strong> {{ device.devicesName }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" [ngClass]="{'dark-custom-btn-secondary':isDarkMode, 
+        'light-custom-btn-secondary':!isDarkMode,
+        'btn':true,
+        'btn-secondary':true,
+        'mb-3':true
+        }" data-bs-dismiss="modal">{{'device-detail.label-bottom-cancel"'|translate}}</button>
+        <button type="button" [ngClass]="{'dark-custom-btn-danger':isDarkMode, 
+        'light-custom-btn-danger':!isDarkMode,
+        'btn':true,
+        'btn-btn-danger':true,
+        'mb-3':true
+        }" (click)="delteDevice()">
+          {{'device-detail.label-bottom-Delete"'|translate}}
+      </button>
+      </div>
+    </div>
+  </div>
+</div>
