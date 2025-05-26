@@ -1,59 +1,109 @@
 # DashboardApp
+Mediciones App is a full-stack web application designed to manage physical measurement devices and their locations. The backend is built with Spring Boot and the frontend with Angular.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+🛰️ Mediciones App
+Mediciones App is a full-stack web application developed to manage measurement devices and their locations, as well as to store their historical data. It includes a robust backend built with Spring Boot and an interactive frontend developed with Angular.
 
-## Development server
+📌 Project Overview
+The system allows:
 
-To start a local development server, run:
+Registering locations where measurement devices are installed.
+Associating multiple devices with each location.
+Storing physical measurements such as temperature, voltage, level, distance, brightness, etc.
+Organizing measurements by day, week, month, and year for historical analysis.
+Viewing, filtering, and updating all data from a user-friendly web interface.
+🏗️ Project Architecture
 
-```bash
+💻 Frontend - Angular
+Modular architecture:
+
+Standalone components
+Services to consume the backend API
+Bootstrap for styling and layout
+Technologies:
+
+Angular 18
+Bootstrap 5
+TypeScript
+RxJS
+HTML & CSS
+⚙️ Installation & Execution
+Backend
+git clone https://github.com/your-username/mediciones-app.git
+cd mediciones-app/backend
+
+cd mediciones-app/frontend
+npm install
 ng serve
-```
+🧪 Usage Examples
+✅ Create a Location
+Click "New Location"
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Enter the name in the modal
 
-## Code scaffolding
+The ID is auto-generated
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+✅ View Locations
+The table displays:
 
-```bash
-ng generate component component-name
-```
+ID
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Name
 
-```bash
-ng generate --help
-```
+Creation/Update dates
 
-## Building
+Device count
 
-To build the project run:
+Status (active/inactive)
 
-```bash
-ng build
-```
+✅ Filter Devices
+You can filter by:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Creation date
 
-## Running unit tests
+Update date
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Location ID
 
-```bash
-ng test
-```
+Date range
 
-## Running end-to-end tests
+Specific date, before or after a date
 
-For end-to-end (e2e) testing, run:
+🚀 Upcoming Features
+Historical data visualization with charts (Chart.js, ApexCharts)
 
-```bash
-ng e2e
-```
+Export reports in PDF or CSV
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Table pagination and sorting
 
-## Additional Resources
+JWT-based authentication and authorization
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Multi-language support (i18n)
+
+General dashboard with device summaries and alerts
+
+Notifications for device failures or abnormal values
+
+🤝 Contributing
+Contributions are welcome!
+
+🧩 How to contribute:
+Fork the repository
+
+Create a new branch (git checkout -b new-feature)
+
+Make your changes
+
+Commit (git commit -m 'Add new feature')
+
+Push to your branch (git push origin new-feature)
+
+Open a Pull Request
+
+📫 Contact
+For questions or suggestions:
+
+📧 Email: mormareima@gmail.com / mario.reyes01@uptc.edu.co
+
+🐙 GitHub: https://github.com/AlejandroReyes666
+
