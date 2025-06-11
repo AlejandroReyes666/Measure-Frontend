@@ -1,3 +1,3 @@
 export var Global={
-   url: "http://localhost:8080"
+   url: "https://measure-back-production.up.railway.app"
 }
