@@ -1,5 +1,8 @@
- 
-<div class="sidebar" [ngClass]="isDarkMode ? 'dark-sidebar' : 'light-sidebar'">
+<div class="sidebar"
+     [ngClass]="[
+       isDarkMode ? 'dark-sidebar' : 'light-sidebar',
+       sidebarVisible ? 'visible' : 'hidden'
+     ]">
   <ul>
     <li><a [routerLink]="['/']" routerLinkActive="actived" [routerLinkActiveOptions]="{ exact: true }">🏠 {{'sidebar.home'|translate}}</a></li>
     <li><a [routerLink]="['/Devices']" routerLinkActive="actived">📟 {{'sidebar.devices'|translate}}</a></li>

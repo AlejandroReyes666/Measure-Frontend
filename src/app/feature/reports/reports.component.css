@@ -194,3 +194,63 @@
   height: 24px;
   margin-right: 0.5rem;
 }
+
+
+@media (max-width: 768px) {
+  .content {
+    left: 0;
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon-big {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem auto;
+    display: block;
+  }
+
+  h2.text-2xl {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .description-box {
+    padding: 1rem;
+  }
+
+  .item {
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+
+  .padded-box {
+    padding: 1rem;
+  }
+
+  .mt-6.text-sm {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}

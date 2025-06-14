@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { MultiLangServiceService } from '../../service/services/multi-lang-service.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { SidebarService } from '../../service/sidebar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -19,7 +20,7 @@ export class NavbarComponent {
   private themeSub!: Subscription;
   multilangService=inject(MultiLangServiceService);
 
-  constructor(private themeService: ThemeService) {}
+  constructor(private themeService: ThemeService, public sidebarService: SidebarService) {}
 
   ngOnInit() {
     this.themeSub = this.themeService.currentTheme$.subscribe(theme => {
@@ -65,6 +66,10 @@ export class NavbarComponent {
         default :
           return 'Spanish'
       }
+  }
+
+  toggleSidebar() {
+    this.sidebarService.toggleSidebar();
   }
 }
 
