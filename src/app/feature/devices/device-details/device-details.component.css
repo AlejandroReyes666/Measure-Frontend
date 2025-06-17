@@ -130,3 +130,40 @@
   }
   
   
+  @media (max-width: 768px) {
+  .location-details-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .location-details-title {
+    font-size: 20px;
+  }
+
+  .location-details-list li {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .form-group input {
+    font-size: 16px;
+  }
+
+  .modal-body p {
+    font-size: 15px;
+  }
+
+  .d-flex.justify-content-between {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

@@ -13,7 +13,7 @@
       const theme = localStorage.getItem('theme') || 'light';
       const className = theme === 'dark' ? 'dark-mode' : 'light-mode';
       document.documentElement.classList.add(className);
-      document.body.classList.add(className);
+      document.body?.classList.add(className);
     })();
   </script>
 

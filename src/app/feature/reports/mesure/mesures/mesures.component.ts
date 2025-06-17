@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MasureService } from '../../../../service/services/masure.service';
 import { HttpClientModule } from '@angular/common/http'; 
-import {Chart,ChartConfiguration,ChartTypeRegistry,registerables,ChartDataset,Point} from 'chart.js';
+import {Chart,ChartConfiguration,ChartTypeRegistry,registerables,ChartDataset,Point,TimeScale} from 'chart.js';
+import 'chartjs-adapter-date-fns';
 import { Measure } from '../../../../models/Measure';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import 'chartjs-adapter-date-fns';
@@ -13,6 +14,8 @@ import { ThemeService } from '../../../../service/services/theme.service';
 import { Subscription } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
+import { truncate } from 'node:fs';
+import { SidebarService } from '../../../../service/sidebar.service';
 @Component({
   selector: 'app-mesures',
   standalone: true,
@@ -51,7 +54,8 @@ export class MesuresComponent implements OnInit,AfterViewInit,OnDestroy {
 
   constructor(private measureService:MasureService, 
     private themeService: ThemeService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private sidebarService: SidebarService
   ){
 
   }
@@ -59,7 +63,7 @@ export class MesuresComponent implements OnInit,AfterViewInit,OnDestroy {
     async ngAfterViewInit(){
     if (typeof window !== 'undefined') {
       const zoomPlugin = await import('chartjs-plugin-zoom');
-      Chart.register(...registerables,zoomPlugin.default); // <- Registrar el plugin zoom dinámicamente
+      Chart.register(...registerables,zoomPlugin.default,TimeScale); // <- Registrar el plugin zoom dinámicamente
     }
     this.loadMeasureDayly();
   }
@@ -76,14 +80,21 @@ export class MesuresComponent implements OnInit,AfterViewInit,OnDestroy {
     });
 
     setInterval(()=>{
+      this.destroyCharts();
       this.loadMeasureDayly();
       console.log("reload ejecutado");
     },600000)
+
+    if (window.innerWidth < 768) {
+    this.sidebarService.setSidebar(false);
+  }
     
   }
 
   ngOnDestroy() {
     this.themeSub.unsubscribe();
+    this.langSub.unsubscribe();
+    this.destroyCharts();
   }
 
   private destroyCharts(): void {
@@ -102,12 +113,8 @@ export class MesuresComponent implements OnInit,AfterViewInit,OnDestroy {
         //console.log( "las mediciones son", this.measure);
         console.log("Datos recibidos:", this.measure.slice(0, 10)); // Muestra los primeros 10 datos
        setTimeout(() => {
-          //this.renderVoltageChart();
-
+          this.destroyCharts();
           this.renderCharts();
-          //this.generateDataExcel(this.measure);
-          
-
         }, 0);
 
       },
@@ -352,6 +359,19 @@ export class MesuresComponent implements OnInit,AfterViewInit,OnDestroy {
   });
 
   const ctx = chartRef.nativeElement;
+
+  if (!ctx) return;
+
+  if (this.chartInstances[chartKey]) {
+    this.chartInstances[chartKey].destroy();
+    delete this.chartInstances[chartKey];
+  }
+
+  const existingChart = Chart.getChart(ctx);
+  if (existingChart) {
+    existingChart.destroy();
+  }
+
   if (ctx) {
     this.chartInstances[chartKey] = new Chart(ctx, {
       type: 'line',
@@ -364,7 +384,7 @@ export class MesuresComponent implements OnInit,AfterViewInit,OnDestroy {
           title: {
             display: true,
             text: chartTitle,
-            font: { size: 14 }
+            font: { size: window.innerWidth < 500 ? 10 : 14 }
           },
           tooltip: {
             mode: 'nearest',
@@ -391,7 +411,7 @@ export class MesuresComponent implements OnInit,AfterViewInit,OnDestroy {
             display:true,
             position: 'bottom',
             labels:{
-              font:{ size:8},
+              font:{ size:window.innerWidth < 500 ? 8 : 12 },
               boxWidth: 10, // tamaño del cuadrado de color
               boxHeight: 10 // tamaño del cuadrado de color
             },             

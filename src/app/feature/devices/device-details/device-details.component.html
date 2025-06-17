@@ -7,8 +7,8 @@
     <li><strong>{{'device-detail.Id'|translate}}</strong> {{ device.devicesId }}</li>
     <li><strong>{{'device-detail.name-device'|translate}}</strong> {{ device.devicesName }}</li>
     <li><strong>{{'device-detail.state'|translate}}</strong> {{ device.state }}</li>
-    <li><strong>{{'device-detail.date1'|translate}}</strong> {{ device.createdDate }}</li>
-    <li><strong>{{'device-detail.date2'|translate}}</strong> {{ device.updatedDate }}</li>
+    <li><strong>{{'device-detail.date1'|translate}}</strong> {{ formatFechaArray(device.createdDate) }}</li>
+    <li><strong>{{'device-detail.date2'|translate}}</strong> {{ formatFechaArray(device.updatedDate) }}</li>
     <li><strong>{{'device-detail.locationid'|translate}}</strong> {{ device.idUbicacion }}</li>
   </div>
 
@@ -62,12 +62,12 @@
   <div class="modal-dialog">
     <div [ngClass]="{'dark-custom-content' :isDarkMode, 'light-custom-content':!isDarkMode, 'modal-content':true}">
       <div class="modal-header">
-        <h5 class="modal-title" id="deleteModalLabel">{{'device-detail.modaltitle"'|translate}}</h5>
+        <h5 class="modal-title" id="deleteModalLabel">{{'device-detail.modaltitle'|translate}}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
-        <p><strong>{{'device-detail.ID"'|translate}}</strong> {{ device.devicesId }}</p>
-        <p><strong>{{'device-detail.modalName"'|translate}}</strong> {{ device.devicesName }}</p>
+        <p><strong>{{'device-detail.ID'|translate}}</strong> {{ device.devicesId }}</p>
+        <p><strong>{{'device-detail.modalName'|translate}}</strong> {{ device.devicesName }}</p>
       </div>
       <div class="modal-footer">
         <button type="button" [ngClass]="{'dark-custom-btn-secondary':isDarkMode, 
@@ -75,14 +75,14 @@
         'btn':true,
         'btn-secondary':true,
         'mb-3':true
-        }" data-bs-dismiss="modal">{{'device-detail.label-bottom-cancel"'|translate}}</button>
+        }" data-bs-dismiss="modal">{{'device-detail.label-bottom-cancel'|translate}}</button>
         <button type="button" [ngClass]="{'dark-custom-btn-danger':isDarkMode, 
         'light-custom-btn-danger':!isDarkMode,
         'btn':true,
         'btn-btn-danger':true,
         'mb-3':true
         }" (click)="delteDevice()">
-          {{'device-detail.label-bottom-Delete"'|translate}}
+          {{'device-detail.label-bottom-Delete'|translate}}
       </button>
       </div>
     </div>

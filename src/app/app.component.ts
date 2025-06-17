@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 import { NavigationStart,NavigationCancel,NavigationEnd,NavigationError } from '@angular/router';
 import { Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { SidebarService } from './service/sidebar.service';
 
 @Component({
   selector: 'app-root',
@@ -29,11 +30,13 @@ export class AppComponent {
 
   loading$: Observable<boolean>;
   isLoading = false;
+  sidebarVisible = true;
 
   constructor(
     private themeService: ThemeService,
     private loadingService:LoaddingService,
     private router: Router,
+    private sidebarservice:SidebarService,
     @Inject(PLATFORM_ID) private platformId: Object
     
     
@@ -78,6 +81,10 @@ ngOnInit(): void {
   this.loadingSub = this.loadingService._loading$.subscribe(state => {
     this.isLoading = state;
   });
+
+  this.sidebarservice.sidebarVisible$.subscribe(visible => {
+      this.sidebarVisible = visible;
+    });
 }
 
     

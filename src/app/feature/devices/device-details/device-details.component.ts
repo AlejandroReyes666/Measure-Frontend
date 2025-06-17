@@ -109,5 +109,22 @@ delteDevice(): void {
   );
 }
 
+
+formatFechaArray(fechaArray: number[]): string {
+  if (!fechaArray || fechaArray.length < 3) return '';
+
+  const [year, month, day, hour = 0, minute = 0, second = 0] = fechaArray;
+  const date = new Date(year, month - 1, day, hour, minute, second);
+
+  return date.toLocaleString('es-CO', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+}
+
+
 }
 

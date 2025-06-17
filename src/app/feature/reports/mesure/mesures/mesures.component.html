@@ -40,8 +40,9 @@
         'mb-3':true
         }">{{'measures.label-bottom-resrore'|translate}}</button>
 
-      <canvas #voltageChartCanvas id="voltageChart" width="400" height="200"  [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
+      <canvas #voltageChartCanvas id="voltageChart" [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
       </div>
+      
       <div class="tab-pane fade" id="nivel">
         <button (click)="resetZoom('levelChart')" [ngClass]="{'dark-custom-btn' :isDarkMode, 
         'light-custom-btn':!isDarkMode,
@@ -50,7 +51,7 @@
         'mb-3':true
         }">{{'measures.label-bottom-resrore'|translate}}</button>
 
-        <canvas #levelChartCanvas id="levelChart" width="400" height="200"  [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
+        <canvas #levelChartCanvas id="levelChart" [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
       </div>
       <div class="tab-pane fade" id="luz">
         <button (click)="resetZoom('lightChart')" [ngClass]="{'dark-custom-btn' :isDarkMode, 
@@ -60,7 +61,7 @@
           'mb-3':true
           }">{{'measures.label-bottom-resrore'|translate}}</button>
 
-        <canvas #lightChartCanvas id="lightChart" width="400" height="200" [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
+        <canvas #lightChartCanvas id="lightChart" [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
       </div>
 
       <div class="tab-pane fade" id="distancia">
@@ -70,7 +71,7 @@
           'btn-primary':true,
           'mb-3':true
           }">{{'measures.label-bottom-resrore'|translate}}</button>
-        <canvas #distanceChartCanvas id="distanceChart" width="400" height="200" [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
+        <canvas #distanceChartCanvas id="distanceChart" [ngClass]="{'dark-custom-chart' :isDarkMode,'light-custom-chart':!isDarkMode}"></canvas>
       </div>
     </div>
   </div>

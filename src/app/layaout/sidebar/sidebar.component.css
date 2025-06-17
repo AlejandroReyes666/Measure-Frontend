@@ -8,6 +8,8 @@
   height: calc(100vh - 60px);
   padding: 20px 10px;
   overflow-y: auto;
+  z-index: 1001;
+  transition: transform 0.3s ease-in-out;
   font-weight: bold;
 
 }
