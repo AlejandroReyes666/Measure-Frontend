@@ -136,40 +136,47 @@
 
 
 @media (max-width: 768px) {
-  .location-details-container {
-    margin: 10px;
-    padding: 15px;
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0 !important;
+    right: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .location-details-container,
+  .location-detail-container {
+    width: 100% !important;
+    padding: 1rem;
+    margin: 0;
   }
 
   .location-details-title {
-    font-size: 20px;
+    font-size: 18px;
+    text-align: center;
   }
 
-  .location-details-list li {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  .form-group input {
-    font-size: 16px;
-  }
-
-  .modal-body p {
-    font-size: 15px;
+  .form-control {
+    font-size: 14px;
   }
 
   .d-flex.justify-content-between {
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .modal-footer {
-    flex-direction: column;
-    gap: 10px;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0 1rem;
   }
 
   .btn {
     width: 100%;
+    font-size: 14px;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
+
   
